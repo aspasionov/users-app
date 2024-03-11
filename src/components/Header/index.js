@@ -5,12 +5,15 @@ import Container from 'Components/Container'
 import './styles.sass'
 
 const Header = () => {
+  const handleClick = (hash) => {
+    window.location.hash = hash
+  }
   return <header className='header'>
       <Container className="header__container">
         <img src={logourl} alt="" className="header__logo" />
         <div className='header__controls'>
-          <Button text="button 2"/>
-          <Button text="button 3"/>
+          <Button text="Users" handleClick={() => handleClick("#users")} />
+          <Button text="Sign up" handleClick={() => handleClick("#form")} />
         </div>
       </Container>
     </header>;
