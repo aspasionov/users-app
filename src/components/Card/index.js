@@ -7,7 +7,7 @@ const Card = ({ user, className = "" }) => {
       <div className="card__img">
         <img src={user.photo} alt="" />
       </div>
-      <div className='card__text' styles="margin-bottom: 20px">{user.name}</div>
+      <div className='card__text' style={{ marginBottom: 20 }}>{user.name}</div>
       <div className='card__text'>{user.position}</div>
       <div className='card__text'>{user.email}</div>
       <div className='card__text'>{user.phone}</div>
