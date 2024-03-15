@@ -6,7 +6,8 @@ import './styles.sass'
 
 const Header = () => {
   const handleClick = (hash) => {
-    window.location.hash = hash
+    location.hash =  ""
+    location.hash =  hash
   }
   return <header className='header'>
       <Container className="header__container">
