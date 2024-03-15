@@ -24,10 +24,17 @@ module.exports = {
           // Creates `style` nodes from JS strings
           "style-loader",
           // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: false,
+            }
+          }
+          ,
           // Compiles Sass to CSS
           "sass-loader",
-        ],
+        ]
+  
       },
       {
         test: /\.?js$/,
@@ -45,6 +52,7 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
+        type: 'asset/resource',
         use: ['file-loader'],
         
       },
