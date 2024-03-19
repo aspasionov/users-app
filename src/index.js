@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from "./app"
-import "reset-css"
-import "./styles.css"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./app";
+import "reset-css";
+import "react-toastify/dist/ReactToastify.css";
+import "./styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <App/>
-);
+root.render(<App />);

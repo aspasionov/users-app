@@ -1,0 +1,25 @@
+
+$breakpoint-sm: 576
+$breakpoint-md: 768
+$breakpoint-lg: 992
+$breakpoint-xl: 1200
+
+=w-min($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+  
+=sm
+  +w-min($breakpoint-sm)
+    @content
+
+=md
+  +w-min($breakpoint-md)
+    @content
+
+=lg
+  +w-min($breakpoint-lg)
+    @content
+
+=xl
+  +w-min($breakpoint-xl)
+    @content

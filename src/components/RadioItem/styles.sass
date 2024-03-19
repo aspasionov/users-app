@@ -1,0 +1,29 @@
+.radio-field
+  display: flex
+  align-items: center
+
+  &__label
+    margin-left: 13px
+    font-size: 16px
+
+  .fake
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    border: 1px solid #00BDD3
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &:before
+      content: ''
+      display: block
+      background-color: #00BDD3
+      border-radius: 50%
+      width: 10px
+      height: 10px
+      opacity: 0
+      transition: all .3s ease
+
+  input:checked + .fake:before
+    opacity: 1

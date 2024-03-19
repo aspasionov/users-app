@@ -1,1 +1,33 @@
-   
+@import 'Styles/styles.sass'
+
+.home 
+  background: url('./images/home-bg.jpg') no-repeat center/cover
+  color: white
+  text-align: center
+  min-height: 500px
+  padding: 40px 15px
+
+  +md
+    display: flex
+    align-items: center
+
+  +lg
+    min-height: 650px
+
+  &__body
+    max-width: 445px
+    width: 100%
+    margin: 0 auto
+
+    h1
+      font-size: 40px
+      margin-bottom: 25px
+      line-height: 1
+
+    p
+      font-size: 16px
+      line-height: 1.6
+      margin-bottom: 30px
+
+    .btn
+      min-width: 100px
