@@ -24,6 +24,7 @@ const Users = () => {
   }, [params]);
 
   useEffect(() => {
+    if(params.count === 6 ) return
     sectionRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "end",
