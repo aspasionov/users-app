@@ -63,7 +63,7 @@ const Form = () => {
       formData.append("photo", values.photo);
       try {
         await postUser(formData);
-        const users = await getUsers(defaultParams);
+        const { users } = await getUsers(defaultParams);
         await setUsers(users);
         window.location.hash = "";
         window.location.hash = "#users";

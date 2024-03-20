@@ -8,9 +8,9 @@ const getUsers = async (params = {}) => {
   try {
     const parsedParams = qs.stringify(params);
     const {
-      data: { users },
+      data,
     } = await axios(`/users?${parsedParams}`);
-    return users;
+    return data;
   } catch (err) {
     throw err.response.data;
   }
