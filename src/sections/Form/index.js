@@ -38,7 +38,7 @@ const validate = (values) => {
 const Form = () => {
   const [positions, setPositions] = useState([]);
 
-  const { setUsers, defaultParams } = useContext(AppContext);
+  const { setUsers, defaultParams, setLoading } = useContext(AppContext);
 
   const cleanPhone = (phoneNumber) => {
     const cleanedPhoneNumber = phoneNumber.replace(/\D/g, "");
@@ -54,6 +54,7 @@ const Form = () => {
     },
     validate,
     onSubmit: async (values) => {
+      setLoading(true);
       const formData = new FormData();
       formData.append("position_id", values.position_id);
       formData.append("name", values.name);
@@ -68,6 +69,8 @@ const Form = () => {
         window.location.hash = "#users";
       } catch (err) {
         toast.error(err?.message || "Smth went wrong, try again!");
+      } finally {
+        setLoading(false);
       }
     },
   });

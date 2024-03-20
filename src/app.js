@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 
 import axios from "axios";
 import Header from "Components/Header";
+import Loader from "Components/Loader";
 import Home from "Sections/Home";
 import Users from "Sections/Users";
 import Form from "Sections/Form";
@@ -18,6 +19,7 @@ const defaultParams = {
 const App = () => {
   const [users, setUsers] = useState([]);
   const [params, setParams] = useState(defaultParams);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -28,7 +30,15 @@ const App = () => {
 
   return (
     <AppContext.Provider
-      value={{ users, setUsers, setParams, params, defaultParams }}
+      value={{
+        users,
+        setUsers,
+        setParams,
+        params,
+        defaultParams,
+        setLoading,
+        loading,
+      }}
     >
       <Header />
       <main>
@@ -36,6 +46,7 @@ const App = () => {
         <Users />
         <Form />
         <ToastContainer />
+        <Loader visible={loading} />
       </main>
     </AppContext.Provider>
   );

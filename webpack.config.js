@@ -62,9 +62,7 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html"),
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "public" }
-      ],
+      patterns: [{ from: "public" }],
     }),
   ],
 };

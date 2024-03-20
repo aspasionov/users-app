@@ -9,22 +9,26 @@ import Button from "Components/Button";
 import "./styles.sass";
 
 const Users = () => {
-  const { users, setUsers, params, setParams } = useContext(AppContext);
+  const { users, setUsers, params, setParams, setLoading } =
+    useContext(AppContext);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       try {
         const data = await getUsers(params);
         setUsers(data);
       } catch (err) {
         toast.error(err?.message || "Smth went wrong, try again!");
+      } finally {
+        setLoading(false);
       }
     })();
   }, [params]);
 
   useEffect(() => {
-    if(params.count === 6 ) return
+    if (params.count === 6) return;
     sectionRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "end",
